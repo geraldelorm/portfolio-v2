@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import { getPost, getPostContent, getPosts } from '@/lib/notion'
+import Breadcrumb from '@/components/Breadcrumb'
 
 export const revalidate = 60
 
@@ -42,6 +43,11 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   return (
     <div style={{ maxWidth: '680px', margin: '0 auto', padding: '0 24px' }}>
       <article style={{ padding: '80px 0' }}>
+        <Breadcrumb crumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Writing', href: '/writing' },
+          { label: post!.title },
+        ]} />
         <header style={{ marginBottom: '48px', borderBottom: '1px solid var(--border)', paddingBottom: '32px' }}>
           <h1 style={{
             fontFamily: 'var(--font-space-grotesk), system-ui, sans-serif',
