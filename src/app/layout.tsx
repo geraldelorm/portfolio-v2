@@ -16,6 +16,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'Gerald G. — Engineer. Builder. Writer.',
   description: 'Software Engineer at Google. Building things. Sharing things.',
+  icons: { icon: '/favicon.svg', shortcut: '/favicon.svg' },
   openGraph: {
     title: 'Gerald G. — Engineer. Builder. Writer.',
     description: 'Software Engineer at Google. Building things. Sharing things.',
