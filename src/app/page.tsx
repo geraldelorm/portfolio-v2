@@ -74,12 +74,26 @@ export default async function Home() {
         <p style={{ fontSize: '1rem', color: 'var(--text-muted)', marginBottom: '14px' }}>
           Software Engineer at <GoogleText />
         </p>
-        <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', maxWidth: '420px', marginBottom: '32px', lineHeight: 1.7 }}>
-          I build things for the web. I read, watch, and have opinions about all of it.
+        <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', maxWidth: '460px', marginBottom: '28px', lineHeight: 1.8 }}>
+          I build things at Google. When I'm not, I'm somewhere on a trail, deep in a book, or rewatching something I've already seen twice.
         </p>
 
+        {/* Page chips */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '32px' }}>
+          {pages.map(({ label, href }) => (
+            <Link key={href} href={href} style={{
+              fontSize: '0.8rem', color: 'var(--text-muted)', textDecoration: 'none',
+              border: '1px solid var(--border)', borderRadius: '999px',
+              padding: '5px 14px', background: 'var(--bg-raised)',
+              transition: 'color 160ms ease, border-color 160ms ease',
+            }}>
+              {label} →
+            </Link>
+          ))}
+        </div>
+
         {/* Social links */}
-        <nav style={{ display: 'flex', flexWrap: 'wrap', marginBottom: '48px' }}>
+        <nav style={{ display: 'flex', flexWrap: 'wrap', marginBottom: '36px' }}>
           {social.map(({ label, href }, i) => (
             <a key={label} href={href} target="_blank" rel="noopener noreferrer" style={{
               fontSize: '0.85rem', color: 'var(--text-muted)', textDecoration: 'none',
