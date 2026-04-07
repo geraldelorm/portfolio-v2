@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import type { HotlistItem } from '@/types'
 
 const CATEGORIES = ['Books', 'TV', 'Movies', 'YouTube', 'Games'] as const
@@ -22,6 +23,11 @@ export default function Hotlist() {
   return (
     <div style={{ maxWidth: '680px', margin: '0 auto', padding: '0 24px' }}>
       <section style={{ padding: '80px 0 48px' }}>
+        <nav style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '32px' }}>
+          <Link href="/" style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textDecoration: 'none' }}>Home</Link>
+          <span style={{ color: 'var(--text-faint)', fontSize: '0.8rem' }}>/</span>
+          <span style={{ fontSize: '0.8rem', color: 'var(--text)' }}>Hotlist</span>
+        </nav>
         <h1 style={{
           fontFamily: 'var(--font-space-grotesk), system-ui, sans-serif',
           fontSize: 'clamp(2rem, 5vw, 2.8rem)',

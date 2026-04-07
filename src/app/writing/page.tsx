@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getPosts } from '@/lib/notion'
+import Breadcrumb from '@/components/Breadcrumb'
 import type { Post } from '@/types'
 
 export const revalidate = 60
@@ -20,6 +21,7 @@ export default async function Writing() {
   return (
     <div style={{ maxWidth: '680px', margin: '0 auto', padding: '0 24px' }}>
       <section style={{ padding: '80px 0 48px' }}>
+        <Breadcrumb crumbs={[{ label: 'Home', href: '/' }, { label: 'Writing' }]} />
         <h1 style={{
           fontFamily: 'var(--font-space-grotesk), system-ui, sans-serif',
           fontSize: 'clamp(2rem, 5vw, 2.8rem)',

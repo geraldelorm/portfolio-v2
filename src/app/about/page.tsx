@@ -1,4 +1,5 @@
 import { getWorkHistory } from '@/lib/notion'
+import Breadcrumb from '@/components/Breadcrumb'
 import type { WorkHistory } from '@/types'
 
 const S = {
@@ -26,6 +27,7 @@ export default async function About() {
 
       {/* Hero */}
       <section style={{ padding: '80px 0 48px' }}>
+        <Breadcrumb crumbs={[{ label: 'Home', href: '/' }, { label: 'About' }]} />
         <h1 style={{
           fontFamily: 'var(--font-space-grotesk), system-ui, sans-serif',
           fontSize: 'clamp(2rem, 5vw, 2.8rem)',
