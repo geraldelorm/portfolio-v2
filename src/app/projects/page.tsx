@@ -1,6 +1,8 @@
 import { getProjects } from '@/lib/notion'
 import type { Project } from '@/types'
 
+export const revalidate = 60
+
 export default async function Projects() {
   let projects: Project[] = []
 

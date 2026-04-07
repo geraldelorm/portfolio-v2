@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { getPosts } from '@/lib/notion'
 import type { Post } from '@/types'
 
+export const revalidate = 60
+
 function formatDate(d: string) {
   return new Date(d).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' })
 }

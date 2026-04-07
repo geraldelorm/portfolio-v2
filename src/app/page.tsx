@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { getPosts, getProjects, getHotlist } from '@/lib/notion'
 import type { Post, Project, HotlistItem } from '@/types'
 
+export const revalidate = 60
+
 const social = [
   { label: 'GitHub', href: 'https://github.com/geraldelorm' },
   { label: 'Twitter', href: 'https://x.com/geraldelorm' },

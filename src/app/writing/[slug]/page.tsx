@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation'
 import { getPost, getPostContent, getPosts } from '@/lib/notion'
 
+export const revalidate = 60
+
 export async function generateStaticParams() {
   try {
     const posts = await getPosts()
