@@ -78,6 +78,19 @@ export default async function Home() {
 
         <NextRace />
 
+        {/* About chip */}
+        <div style={{ marginBottom: '24px' }}>
+          <Link href="/about" style={{
+            display: 'inline-flex', alignItems: 'center', gap: '6px',
+            fontSize: '0.8rem', color: 'var(--text-muted)', textDecoration: 'none',
+            border: '1px solid var(--border)', borderRadius: '999px',
+            padding: '5px 14px', background: 'var(--bg-raised)',
+            transition: 'color 160ms ease, border-color 160ms ease',
+          }}>
+            More about me →
+          </Link>
+        </div>
+
         {/* Social links */}
         <SocialLinks />
 
