@@ -1,22 +1,17 @@
 import Link from 'next/link'
 import { getPosts, getProjects, getHotlist } from '@/lib/notion'
 import NextRace from '@/components/NextRace'
+import SocialLinks from '@/components/SocialLinks'
 import type { Post, Project, HotlistItem } from '@/types'
 
 export const revalidate = 60
 
-const social = [
-  { label: 'GitHub', href: 'https://github.com/geraldelorm' },
-  { label: 'Twitter', href: 'https://x.com/geraldelorm' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/geraldelorm' },
-  { label: 'Instagram', href: 'https://instagram.com/geraldelorm' },
-]
 
 const pages = [
+  { label: 'Who I am', sub: 'Work history, background, outside of work.', href: '/about' },
   { label: 'What I\'m building', sub: 'Projects, experiments, things in progress.', href: '/projects' },
   { label: 'What I\'m writing', sub: 'Thoughts on engineering, craft, and life.', href: '/writing' },
   { label: 'What I\'m into', sub: 'Books, TV, movies, F1, games and YouTube picks.', href: '/hotlist' },
-  { label: 'Who I am', sub: 'Work history, background, outside of work.', href: '/about' },
 ]
 
 const S = {
@@ -84,17 +79,7 @@ export default async function Home() {
         <NextRace />
 
         {/* Social links */}
-        <nav style={{ display: 'flex', flexWrap: 'wrap', marginBottom: '36px' }}>
-          {social.map(({ label, href }, i) => (
-            <a key={label} href={href} target="_blank" rel="noopener noreferrer" style={{
-              fontSize: '0.85rem', color: 'var(--text-muted)', textDecoration: 'none',
-              paddingRight: i < social.length - 1 ? '16px' : '0', position: 'relative', transition: 'color 160ms ease',
-            }}>
-              {label}
-              {i < social.length - 1 && <span style={{ position: 'absolute', right: '6px', color: 'var(--text-faint)' }}>·</span>}
-            </a>
-          ))}
-        </nav>
+        <SocialLinks />
 
         {/* Page nav cards */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
