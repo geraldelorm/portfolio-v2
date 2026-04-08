@@ -78,7 +78,7 @@ export default async function Home() {
           Software Engineer at <GoogleText />
         </p>
         <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', maxWidth: '460px', marginBottom: '0', lineHeight: 1.8 }}>
-          I build things at Google. When I'm not, I'm somewhere on a trail, deep in a book, or rewatching something I've already seen twice.
+          I build things at Google. When I'm not, I'm somewhere on a trail, deep in a book, rewatching something I've already seen twice — or busy watching F1. ↓
         </p>
 
         <NextRace />
