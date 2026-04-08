@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getPosts, getProjects, getHotlist } from '@/lib/notion'
+import NextRace from '@/components/NextRace'
 import type { Post, Project, HotlistItem } from '@/types'
 
 export const revalidate = 60
@@ -14,7 +15,7 @@ const social = [
 const pages = [
   { label: 'What I\'m building', sub: 'Projects, experiments, things in progress.', href: '/projects' },
   { label: 'What I\'m writing', sub: 'Thoughts on engineering, craft, and life.', href: '/writing' },
-  { label: 'What I\'m into', sub: 'Books, TV, movies, games and YouTube picks.', href: '/hotlist' },
+  { label: 'What I\'m into', sub: 'Books, TV, movies, F1, games and YouTube picks.', href: '/hotlist' },
   { label: 'Who I am', sub: 'Work history, background, outside of work.', href: '/about' },
 ]
 
@@ -76,23 +77,11 @@ export default async function Home() {
         <p style={{ fontSize: '1rem', color: 'var(--text-muted)', marginBottom: '14px' }}>
           Software Engineer at <GoogleText />
         </p>
-        <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', maxWidth: '460px', marginBottom: '28px', lineHeight: 1.8 }}>
-          I build things at Google. When I'm not, I'm somewhere on a trail, deep in a book, or rewatching something I've already seen twice.
+        <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', maxWidth: '460px', marginBottom: '0', lineHeight: 1.8 }}>
+          I build things at Google. When I'm not, I'm somewhere on a trail, deep in a book, rewatching something I've already seen twice — or busy watching F1. ↓
         </p>
 
-        {/* Page chips */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '32px' }}>
-          {pages.map(({ label, href }) => (
-            <Link key={href} href={href} style={{
-              fontSize: '0.8rem', color: 'var(--text-muted)', textDecoration: 'none',
-              border: '1px solid var(--border)', borderRadius: '999px',
-              padding: '5px 14px', background: 'var(--bg-raised)',
-              transition: 'color 160ms ease, border-color 160ms ease',
-            }}>
-              {label} →
-            </Link>
-          ))}
-        </div>
+        <NextRace />
 
         {/* Social links */}
         <nav style={{ display: 'flex', flexWrap: 'wrap', marginBottom: '36px' }}>

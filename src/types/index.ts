@@ -23,7 +23,16 @@ export interface HotlistItem {
   meta: string
   note: string
   tag: string
-  category: 'Books' | 'TV' | 'Movies' | 'YouTube' | 'Games'
+  category: 'Books' | 'TV' | 'Movies' | 'YouTube' | 'Games' | 'F1'
+}
+
+export interface RaceSchedule {
+  round: string
+  raceName: string
+  circuitName: string
+  country: string
+  date: string
+  time: string
 }
 
 export interface WorkHistory {

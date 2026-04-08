@@ -89,9 +89,34 @@ export default async function About() {
       {/* Life outside work */}
       <section style={{ ...S.section, paddingBottom: '80px' }}>
         <h2 style={S.h2}>Outside work</h2>
-        <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.8, maxWidth: '520px', marginBottom: '24px' }}>
+        <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.8, maxWidth: '520px', marginBottom: '32px' }}>
           Long hikes, travel, photography, and too many recommendations. You can follow along on Instagram.
         </p>
+
+        {/* F1 */}
+        <div style={{ marginBottom: '32px' }}>
+          <div style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '16px' }}>On the grid</div>
+          <ul style={{ listStyle: 'none' }}>
+            {[
+              { label: 'Favourite driver', value: 'Lewis Hamilton', accent: true },
+              { label: 'Team', value: 'McLaren → Ferrari' },
+              { label: 'Most memorable', value: '2021 Abu Dhabi GP' },
+              { label: '2025 take', value: 'Hamilton in red is everything.' },
+            ].map(({ label, value, accent }) => (
+              <li key={label} style={{
+                display: 'grid', gridTemplateColumns: '140px 1fr',
+                gap: '16px', paddingBottom: '10px',
+              }}>
+                <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', paddingTop: '1px' }}>{label}</span>
+                <span style={{ fontSize: '0.85rem', color: 'var(--text)' }}>
+                  {accent && <span style={{ color: 'var(--accent)', marginRight: '6px' }}>·</span>}
+                  {value}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         <a
           href="https://instagram.com/geraldelorm"
           target="_blank"

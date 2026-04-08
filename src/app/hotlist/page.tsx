@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import type { HotlistItem } from '@/types'
 
-const CATEGORIES = ['Books', 'TV', 'Movies', 'YouTube', 'Games'] as const
+const CATEGORIES = ['Books', 'TV', 'Movies', 'YouTube', 'Games', 'F1'] as const
 
 export default function Hotlist() {
   const [active, setActive] = useState<string>('Books')
@@ -46,7 +46,7 @@ export default function Hotlist() {
               fontSize: '0.82rem', fontWeight: 500, letterSpacing: '0.02em',
               padding: cat === 'Books' ? '8px 16px 10px 0' : '8px 16px 10px',
               color: active === cat ? 'var(--text)' : 'var(--text-muted)',
-              borderBottom: active === cat ? '2px solid var(--text)' : '2px solid transparent',
+              borderBottom: active === cat ? `2px solid ${cat === 'F1' ? 'var(--accent)' : 'var(--text)'}` : '2px solid transparent',
               marginBottom: '-1px', transition: 'color 160ms ease',
             }}>{cat}</button>
           ))}
