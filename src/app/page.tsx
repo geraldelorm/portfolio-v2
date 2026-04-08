@@ -83,20 +83,6 @@ export default async function Home() {
 
         <NextRace />
 
-        {/* Page chips */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '32px' }}>
-          {pages.map(({ label, href }) => (
-            <Link key={href} href={href} style={{
-              fontSize: '0.8rem', color: 'var(--text-muted)', textDecoration: 'none',
-              border: '1px solid var(--border)', borderRadius: '999px',
-              padding: '5px 14px', background: 'var(--bg-raised)',
-              transition: 'color 160ms ease, border-color 160ms ease',
-            }}>
-              {label} →
-            </Link>
-          ))}
-        </div>
-
         {/* Social links */}
         <nav style={{ display: 'flex', flexWrap: 'wrap', marginBottom: '36px' }}>
           {social.map(({ label, href }, i) => (
