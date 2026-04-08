@@ -33,9 +33,9 @@ export default async function NextRace() {
       <div>
         <div style={{ ...label, marginBottom: '4px' }}>
           <span style={{ color: 'var(--accent)', fontWeight: 600 }}>R{race.round}</span>
-          {' · '}
+          <span style={{ color: 'var(--accent)', margin: '0 5px' }}>·</span>
           {race.circuitName}
-          {' · '}
+          <span style={{ color: 'var(--accent)', margin: '0 5px' }}>·</span>
           {race.country}
         </div>
         <div style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--text)' }}>
