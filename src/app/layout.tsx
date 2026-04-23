@@ -52,6 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main style={{ flex: 1 }}>{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
